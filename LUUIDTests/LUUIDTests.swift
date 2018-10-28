@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import LUUID
+import LUUID
 
 class LUUIDTests: XCTestCase {
 
