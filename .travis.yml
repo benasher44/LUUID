@@ -1,0 +1,16 @@
+language: Objective-C
+osx_image: xcode10
+env:
+  - NSUnbufferedIO=YES
+before_install:
+  - bundle install --with ci --without=documentation --path vendor
+script:
+  - bundle exec pod lib lint
+  - xcodebuild -project LUUID.xcodeproj -scheme LUUID -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE' -enableCodeCoverage YES test
+
+after_failure:
+  - sleep 10
+
+after_success:
+  - bundle exec slather
+  - bash <(curl -s https://codecov.io/bash) -f tmp/cobertura.xml

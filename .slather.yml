@@ -1,0 +1,8 @@
+input_format: profdata
+coverage_service: cobertura_xml
+xcodeproj: LUUID.xcodeproj
+scheme: LUUID
+source_directory: LUUID
+output_directory: tmp
+ignore:
+  - LUUIDTests
