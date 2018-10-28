@@ -68,6 +68,23 @@ class LUUIDTests: XCTestCase {
         let jsonString = String(data: jsonData, encoding: .utf8)!
         XCTAssertEqual(jsonString, "{\"test\":\"\(uuidL.uuidString)\"}")
     }
+
+    func testBadSerialization() {
+        XCTAssertNil(LUUID(uuidString: "not a uuid string"))
+
+        let jsonData = try! JSONEncoder().encode(["test": "not a uuid string"])
+
+        XCTAssertThrowsError(try JSONDecoder().decode([String: LUUID].self, from: jsonData)) { error in
+            guard case .dataCorrupted? = error as? DecodingError else {
+                XCTFail("""
+                    Expected decoding failure for decoding an invalid UUID
+                    string to be DecodingError.dataCorrupted; instead found
+                    \(error)
+                """)
+                return
+            }
+        }
+    }
 }
 
 extension LUUIDTests {
