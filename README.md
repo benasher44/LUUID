@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/benasher44/LUUID.svg?branch=master)](https://travis-ci.org/benasher44/LUUID) [![codecov](https://codecov.io/gh/benasher44/LUUID/branch/master/graph/badge.svg)](https://codecov.io/gh/benasher44/LUUID)
 
-Clone of (and drop-in replacement for) `Swift.UUID`, but `LUUID.uuidString` returns a lowercase string to conform to UUID RFC
+`LUUID` is a clone of (and drop-in replacement for) `Swift.UUID`, but `LUUID.uuidString` returns a lowercase string to conform to the [UUID RFC](https://www.ietf.org/rfc/rfc4122.txt).
 
 ## Modifications (compared to `Swift.UUID`)
 
