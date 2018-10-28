@@ -5,4 +5,4 @@ scheme: LUUID
 source_directory: LUUID
 output_directory: tmp
 ignore:
-  - LUUIDTests
+  - LUUIDTests/*
