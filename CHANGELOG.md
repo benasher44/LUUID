@@ -4,6 +4,11 @@ The changelog for `LUUID`. Also see the [releases](https://github.com/benasher44
 
 ------
 
+2.0.0
+-----
+
+Upgrade to Swift 5.
+
 1.0.0
 -----
 
