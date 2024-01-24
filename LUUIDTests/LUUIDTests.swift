@@ -27,7 +27,7 @@ class LUUIDTests: XCTestCase {
         let uuidL = LUUID()
         let uuidU = UUID(uuid: uuidL.uuid)
         verifyUUIDs(uuidL, uuidU)
-        XCTAssertNotEqual(uuidU.hashValue, uuidL.hashValue)
+        XCTAssertEqual(uuidU.hashValue, uuidL.hashValue)
         XCTAssertEqual(uuidU.description.lowercased(), uuidL.description)
         XCTAssertEqual(uuidU.debugDescription.lowercased(), uuidL.debugDescription)
     }

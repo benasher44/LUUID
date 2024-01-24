@@ -241,6 +241,8 @@
 //      to code inside the Swift standard library
 //
 
+import Foundation
+
 /// Represents UUID strings, which can be used to uniquely identify types, interfaces, and other items.
 public struct LUUID : Hashable, Equatable, CustomStringConvertible {
 
